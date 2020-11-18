@@ -44,12 +44,11 @@ bool PreFlightCheck::manualControlSwitchesCheck(orb_advert_t *mavlink_log_pub, c
 	bool success = true;
 
 	uORB::SubscriptionData<manual_control_switches_s> manual_control_switches_sub{ORB_ID(manual_control_switches)};
-	manual_control_switches_sub.update();
 	const manual_control_switches_s &manual_control_switches = manual_control_switches_sub.get();
 
 	if (manual_control_switches.timestamp != 0) {
 
-		//check action switches
+		// check action switches
 		if (manual_control_switches.return_switch == manual_control_switches_s::SWITCH_POS_ON) {
 			success = false;
 

@@ -44,7 +44,7 @@ FlightTaskAutoMapper::FlightTaskAutoMapper() :
 	_sticks(this)
 {
 	_gear.landing_gear = landing_gear_s::GEAR_KEEP;
-};
+}
 
 bool FlightTaskAutoMapper::activate(const vehicle_local_position_setpoint_s &last_setpoint)
 {
